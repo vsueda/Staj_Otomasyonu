@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38C57C2D-9C62-4A51-90FA-A6E25A916ED0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>svStajOtomasyonu</RootNamespace>
+    <AssemblyName>svStajOtomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeri.Designer.cs">
+      <DependentUpon>IsYeri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeriEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeriEkrani.Designer.cs">
+      <DependentUpon>IsYeriEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsyeriMesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsyeriMesaj.Designer.cs">
+      <DependentUpon>IsyeriMesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeriOnay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeriOnay.Designer.cs">
+      <DependentUpon>IsYeriOnay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeriStajBasvuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeriStajBasvuru.Designer.cs">
+      <DependentUpon>IsYeriStajBasvuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeriTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeriTask.Designer.cs">
+      <DependentUpon>IsYeriTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeriTaskGorevPuanla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeriTaskGorevPuanla.Designer.cs">
+      <DependentUpon>IsYeriTaskGorevPuanla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsYeriTaskGorevVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsYeriTaskGorevVer.Designer.cs">
+      <DependentUpon>IsYeriTaskGorevVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs" />
+    <Compile Include="OgrenciDevamsizlik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciDevamsizlik.Designer.cs">
+      <DependentUpon>OgrenciDevamsizlik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciEkrani.Designer.cs">
+      <DependentUpon>OgrenciEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciGiris.Designer.cs">
+      <DependentUpon>OgrenciGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciMesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciMesaj.Designer.cs">
+      <DependentUpon>OgrenciMesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciOnay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciOnay.Designer.cs">
+      <DependentUpon>OgrenciOnay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciStajBasvuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciStajBasvuru.Designer.cs">
+      <DependentUpon>OgrenciStajBasvuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciStajSonu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciStajSonu.Designer.cs">
+      <DependentUpon>OgrenciStajSonu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciTask.Designer.cs">
+      <DependentUpon>OgrenciTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgretmenBelgeOnay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgretmenBelgeOnay.Designer.cs">
+      <DependentUpon>OgretmenBelgeOnay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgretmenEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgretmenEkrani.Designer.cs">
+      <DependentUpon>OgretmenEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgretmenMesaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgretmenMesaj.Designer.cs">
+      <DependentUpon>OgretmenMesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgretmenStajSonuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgretmenStajSonuc.Designer.cs">
+      <DependentUpon>OgretmenStajSonuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilIsYeri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilIsYeri.Designer.cs">
+      <DependentUpon>ProfilIsYeri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilOgrenci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilOgrenci.Designer.cs">
+      <DependentUpon>ProfilOgrenci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilOgretmen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfilOgretmen.Designer.cs">
+      <DependentUpon>ProfilOgretmen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlBaglanti.cs" />
+    <Compile Include="stajdbbelge.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbbelge.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSetgorevler.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSetgorevler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSetgorevogr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSetgorevogr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSetGorevsel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSetGorevsel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSetmesaj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSetmesaj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSetMesaj1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSetMesaj1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbDataSetogr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbDataSetogr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbgorev.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbgorev.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbIsYeriBelge.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbIsYeriBelge.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbIsYeriTask.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbIsYeriTask.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbisyr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbisyr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbogr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbogr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbogrenci.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbogrenci.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stajdbOgretmenOgrBelge.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stajdbOgretmenOgrBelge.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeri.resx">
+      <DependentUpon>IsYeri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeriEkrani.resx">
+      <DependentUpon>IsYeriEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsyeriMesaj.resx">
+      <DependentUpon>IsyeriMesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeriOnay.resx">
+      <DependentUpon>IsYeriOnay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeriStajBasvuru.resx">
+      <DependentUpon>IsYeriStajBasvuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeriTask.resx">
+      <DependentUpon>IsYeriTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeriTaskGorevPuanla.resx">
+      <DependentUpon>IsYeriTaskGorevPuanla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsYeriTaskGorevVer.resx">
+      <DependentUpon>IsYeriTaskGorevVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciDevamsizlik.resx">
+      <DependentUpon>OgrenciDevamsizlik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciEkrani.resx">
+      <DependentUpon>OgrenciEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciGiris.resx">
+      <DependentUpon>OgrenciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciMesaj.resx">
+      <DependentUpon>OgrenciMesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciOnay.resx">
+      <DependentUpon>OgrenciOnay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciStajBasvuru.resx">
+      <DependentUpon>OgrenciStajBasvuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciStajSonu.resx">
+      <DependentUpon>OgrenciStajSonu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciTask.resx">
+      <DependentUpon>OgrenciTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgretmenBelgeOnay.resx">
+      <DependentUpon>OgretmenBelgeOnay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgretmenEkrani.resx">
+      <DependentUpon>OgretmenEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgretmenMesaj.resx">
+      <DependentUpon>OgretmenMesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgretmenStajSonuc.resx">
+      <DependentUpon>OgretmenStajSonuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilIsYeri.resx">
+      <DependentUpon>ProfilIsYeri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilOgrenci.resx">
+      <DependentUpon>ProfilOgrenci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfilOgretmen.resx">
+      <DependentUpon>ProfilOgretmen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include=".editorconfig" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="stajdbbelge.xsc">
+      <DependentUpon>stajdbbelge.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbbelge.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbbelge.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbbelge.xss">
+      <DependentUpon>stajdbbelge.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet.xsc">
+      <DependentUpon>stajdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet.xss">
+      <DependentUpon>stajdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet1.xsc">
+      <DependentUpon>stajdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet1.xss">
+      <DependentUpon>stajdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet10.xsc">
+      <DependentUpon>stajdbDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet10.xss">
+      <DependentUpon>stajdbDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet11.xsc">
+      <DependentUpon>stajdbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet11.xss">
+      <DependentUpon>stajdbDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet2.xsc">
+      <DependentUpon>stajdbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet2.xss">
+      <DependentUpon>stajdbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet3.xsc">
+      <DependentUpon>stajdbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet3.xss">
+      <DependentUpon>stajdbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet4.xsc">
+      <DependentUpon>stajdbDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet4.xss">
+      <DependentUpon>stajdbDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet5.xsc">
+      <DependentUpon>stajdbDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet5.xss">
+      <DependentUpon>stajdbDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet6.xsc">
+      <DependentUpon>stajdbDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet6.xss">
+      <DependentUpon>stajdbDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet7.xsc">
+      <DependentUpon>stajdbDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet7.xss">
+      <DependentUpon>stajdbDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet8.xsc">
+      <DependentUpon>stajdbDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet8.xss">
+      <DependentUpon>stajdbDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet9.xsc">
+      <DependentUpon>stajdbDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSet9.xss">
+      <DependentUpon>stajdbDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetgorevler.xsc">
+      <DependentUpon>stajdbDataSetgorevler.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetgorevler.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSetgorevler.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSetgorevler.xss">
+      <DependentUpon>stajdbDataSetgorevler.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetgorevogr.xsc">
+      <DependentUpon>stajdbDataSetgorevogr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetgorevogr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSetgorevogr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSetgorevogr.xss">
+      <DependentUpon>stajdbDataSetgorevogr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetGorevsel.xsc">
+      <DependentUpon>stajdbDataSetGorevsel.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetGorevsel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSetGorevsel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSetGorevsel.xss">
+      <DependentUpon>stajdbDataSetGorevsel.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetmesaj.xsc">
+      <DependentUpon>stajdbDataSetmesaj.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetmesaj.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSetmesaj.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSetmesaj.xss">
+      <DependentUpon>stajdbDataSetmesaj.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetMesaj1.xsc">
+      <DependentUpon>stajdbDataSetMesaj1.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetMesaj1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSetMesaj1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSetMesaj1.xss">
+      <DependentUpon>stajdbDataSetMesaj1.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetogr.xsc">
+      <DependentUpon>stajdbDataSetogr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbDataSetogr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbDataSetogr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbDataSetogr.xss">
+      <DependentUpon>stajdbDataSetogr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbgorev.xsc">
+      <DependentUpon>stajdbgorev.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbgorev.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbgorev.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbgorev.xss">
+      <DependentUpon>stajdbgorev.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbIsYeriBelge.xsc">
+      <DependentUpon>stajdbIsYeriBelge.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbIsYeriBelge.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbIsYeriBelge.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbIsYeriBelge.xss">
+      <DependentUpon>stajdbIsYeriBelge.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbIsYeriTask.xsc">
+      <DependentUpon>stajdbIsYeriTask.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbIsYeriTask.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbIsYeriTask.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbIsYeriTask.xss">
+      <DependentUpon>stajdbIsYeriTask.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbisyr.xsc">
+      <DependentUpon>stajdbisyr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbisyr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbisyr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbisyr.xss">
+      <DependentUpon>stajdbisyr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbogr.xsc">
+      <DependentUpon>stajdbogr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbogr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbogr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbogr.xss">
+      <DependentUpon>stajdbogr.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbogrenci.xsc">
+      <DependentUpon>stajdbogrenci.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbogrenci.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbogrenci.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbogrenci.xss">
+      <DependentUpon>stajdbogrenci.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbOgretmenOgrBelge.xsc">
+      <DependentUpon>stajdbOgretmenOgrBelge.xsd</DependentUpon>
+    </None>
+    <None Include="stajdbOgretmenOgrBelge.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stajdbOgretmenOgrBelge.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stajdbOgretmenOgrBelge.xss">
+      <DependentUpon>stajdbOgretmenOgrBelge.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\students.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\communicate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\partner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\website.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pdf\" />
+    <Folder Include="resimler\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

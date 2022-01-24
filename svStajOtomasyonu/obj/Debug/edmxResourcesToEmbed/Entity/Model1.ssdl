@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stajdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BelgeIcerik">
+    <Key>
+      <PropertyRef Name="BelgeId" />
+    </Key>
+    <Property Name="StajBelgeAdi" Type="int" Nullable="false" />
+    <Property Name="BelgeOkulAdi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BelgeOgrenciSinif" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BelgeOgrenciBolum" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BelgeOgrenciStajNo" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="BelgeOgrenciAdi" Type="int" Nullable="false" />
+    <Property Name="BelgeOgrenciNumara" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BelgeTarih" Type="date" Nullable="false" />
+    <Property Name="BelgeOgrenciAdres" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="BelgeOgrenciStajYil" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="BelgeOgrenciOgretim" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="BelgeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BelgeIsYeri">
+    <Key>
+      <PropertyRef Name="IsYeriId" />
+    </Key>
+    <Property Name="IsYeriAd" Type="int" />
+    <Property Name="IsYeriYetkiliAd" Type="varchar" MaxLength="20" />
+    <Property Name="IsYeriYetkiliSoyad" Type="varchar" MaxLength="20" />
+    <Property Name="IsYeriWebAdresi" Type="varchar" MaxLength="30" />
+    <Property Name="IsYeriToplamPersonelSayisi" Type="varchar" MaxLength="3" />
+    <Property Name="IsYeriTeknikPersonelSayisi" Type="varchar" MaxLength="3" />
+    <Property Name="IsYeriFaaliyetAlanlari" Type="text" />
+    <Property Name="IsYeriPersonelMezunOkul" Type="varchar" MaxLength="40" />
+    <Property Name="IsYeriPersonelMezunBolum" Type="varchar" MaxLength="30" />
+    <Property Name="IsYeriPersonelMezunGorev" Type="varchar" MaxLength="30" />
+    <Property Name="IsYeriCumartesi" Type="varchar" MaxLength="1" />
+    <Property Name="IsYeriId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IsYeri">
+    <Key>
+      <PropertyRef Name="IsyeriId" />
+    </Key>
+    <Property Name="IsyeriId" Type="int" Nullable="false" />
+    <Property Name="IsyeriNo" Type="varchar" MaxLength="11" />
+    <Property Name="IsyeriSifre" Type="varchar" MaxLength="20" />
+    <Property Name="IsyeriIsim" Type="varchar" MaxLength="35" />
+    <Property Name="IsyeriIl" Type="varchar" MaxLength="20" />
+    <Property Name="IsyeriAdres" Type="varchar" MaxLength="70" />
+    <Property Name="IsyeriMail" Type="varchar" MaxLength="50" />
+    <Property Name="IsyeriTel" Type="varchar" MaxLength="11" />
+    <Property Name="IsyeriOgrenci" Type="int" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+    </Key>
+    <Property Name="OgrenciId" Type="int" Nullable="false" />
+    <Property Name="OgrenciTc" Type="varchar" MaxLength="11" />
+    <Property Name="OgrenciSifre" Type="varchar" MaxLength="20" />
+    <Property Name="OgreciIsim" Type="varchar" MaxLength="30" />
+    <Property Name="OgrenciSoyisim" Type="varchar" MaxLength="30" />
+    <Property Name="OgrenciOkul" Type="varchar" MaxLength="50" />
+    <Property Name="OgrenciOgretmen" Type="int" />
+    <Property Name="OgrenciMail" Type="varchar" MaxLength="40" />
+    <Property Name="OgrenciTel" Type="varchar" MaxLength="11" />
+    <Property Name="OgrenciFoto" Type="image" />
+  </EntityType>
+  <EntityType Name="Ogretmen">
+    <Key>
+      <PropertyRef Name="OgretmenId" />
+    </Key>
+    <Property Name="OgretmenId" Type="int" Nullable="false" />
+    <Property Name="OgretmenTc" Type="varchar" MaxLength="11" />
+    <Property Name="OgretmenSifre" Type="varchar" MaxLength="20" />
+    <Property Name="OgretmenIsim" Type="varchar" MaxLength="30" />
+    <Property Name="OgretmenSoyisim" Type="varchar" MaxLength="30" />
+    <Property Name="OgretmenOkul" Type="varchar" MaxLength="50" />
+    <Property Name="OgretmenMail" Type="varchar" MaxLength="40" />
+    <Property Name="OgretmenTel" Type="varchar" MaxLength="11" />
+    <Property Name="OgretmenFoto" Type="image" />
+  </EntityType>
+  <EntityType Name="StajBelgeleri">
+    <Key>
+      <PropertyRef Name="StajRaporlariId" />
+    </Key>
+    <Property Name="StajRaporlariId" Type="int" Nullable="false" />
+    <Property Name="StaRaporuAdi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BelgeIcerik_StajBelgeleri">
+    <End Role="StajBelgeleri" Type="Self.StajBelgeleri" Multiplicity="1" />
+    <End Role="BelgeIcerik" Type="Self.BelgeIcerik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StajBelgeleri">
+        <PropertyRef Name="StajRaporlariId" />
+      </Principal>
+      <Dependent Role="BelgeIcerik">
+        <PropertyRef Name="StajBelgeAdi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BelgeIsYeri_IsYeri">
+    <End Role="IsYeri" Type="Self.IsYeri" Multiplicity="0..1" />
+    <End Role="BelgeIsYeri" Type="Self.BelgeIsYeri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IsYeri">
+        <PropertyRef Name="IsyeriId" />
+      </Principal>
+      <Dependent Role="BelgeIsYeri">
+        <PropertyRef Name="IsYeriAd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IsYeri_Ogrenci">
+    <End Role="Ogrenci" Type="Self.Ogrenci" Multiplicity="0..1" />
+    <End Role="IsYeri" Type="Self.IsYeri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="IsYeri">
+        <PropertyRef Name="IsyeriOgrenci" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ogrenci_Ogretmen">
+    <End Role="Ogretmen" Type="Self.Ogretmen" Multiplicity="0..1" />
+    <End Role="Ogrenci" Type="Self.Ogrenci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="Ogrenci">
+        <PropertyRef Name="OgrenciOgretmen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="stajdbModelStoreContainer">
+    <EntitySet Name="BelgeIcerik" EntityType="Self.BelgeIcerik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BelgeIsYeri" EntityType="Self.BelgeIsYeri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IsYeri" EntityType="Self.IsYeri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ogrenci" EntityType="Self.Ogrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ogretmen" EntityType="Self.Ogretmen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StajBelgeleri" EntityType="Self.StajBelgeleri" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BelgeIcerik_StajBelgeleri" Association="Self.FK_BelgeIcerik_StajBelgeleri">
+      <End Role="StajBelgeleri" EntitySet="StajBelgeleri" />
+      <End Role="BelgeIcerik" EntitySet="BelgeIcerik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BelgeIsYeri_IsYeri" Association="Self.FK_BelgeIsYeri_IsYeri">
+      <End Role="IsYeri" EntitySet="IsYeri" />
+      <End Role="BelgeIsYeri" EntitySet="BelgeIsYeri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IsYeri_Ogrenci" Association="Self.FK_IsYeri_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="IsYeri" EntitySet="IsYeri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ogrenci_Ogretmen" Association="Self.FK_Ogrenci_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

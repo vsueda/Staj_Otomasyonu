@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stajdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BelgeIcerik">
+    <Key>
+      <PropertyRef Name="BelgeId" />
+    </Key>
+    <Property Name="StajBelgeAdi" Type="Int32" Nullable="false" />
+    <Property Name="BelgeOkulAdi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeOgrenciSinif" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeOgrenciBolum" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeOgrenciStajNo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeOgrenciAdi" Type="Int32" Nullable="false" />
+    <Property Name="BelgeOgrenciNumara" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeTarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BelgeOgrenciAdres" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeOgrenciStajYil" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeOgrenciOgretim" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BelgeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="StajBelgeleri" Relationship="Self.FK_BelgeIcerik_StajBelgeleri" FromRole="BelgeIcerik" ToRole="StajBelgeleri" />
+  </EntityType>
+  <EntityType Name="BelgeIsYeri">
+    <Key>
+      <PropertyRef Name="IsYeriId" />
+    </Key>
+    <Property Name="IsYeriAd" Type="Int32" />
+    <Property Name="IsYeriYetkiliAd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriYetkiliSoyad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriWebAdresi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriToplamPersonelSayisi" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriTeknikPersonelSayisi" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriFaaliyetAlanlari" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriPersonelMezunOkul" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriPersonelMezunBolum" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriPersonelMezunGorev" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriCumartesi" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IsYeriId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="IsYeri" Relationship="Self.FK_BelgeIsYeri_IsYeri" FromRole="BelgeIsYeri" ToRole="IsYeri" />
+  </EntityType>
+  <EntityType Name="IsYeri">
+    <Key>
+      <PropertyRef Name="IsyeriId" />
+    </Key>
+    <Property Name="IsyeriId" Type="Int32" Nullable="false" />
+    <Property Name="IsyeriNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriIsim" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriIl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriAdres" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="IsyeriOgrenci" Type="Int32" />
+    <NavigationProperty Name="BelgeIsYeri" Relationship="Self.FK_BelgeIsYeri_IsYeri" FromRole="IsYeri" ToRole="BelgeIsYeri" />
+    <NavigationProperty Name="Ogrenci" Relationship="Self.FK_IsYeri_Ogrenci" FromRole="IsYeri" ToRole="Ogrenci" />
+  </EntityType>
+  <EntityType Name="Ogrenci">
+    <Key>
+      <PropertyRef Name="OgrenciId" />
+    </Key>
+    <Property Name="OgrenciId" Type="Int32" Nullable="false" />
+    <Property Name="OgrenciTc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OgreciIsim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciSoyisim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciOkul" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciOgretmen" Type="Int32" />
+    <Property Name="OgrenciMail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="OgrenciFoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="IsYeri" Relationship="Self.FK_IsYeri_Ogrenci" FromRole="Ogrenci" ToRole="IsYeri" />
+    <NavigationProperty Name="Ogretmen" Relationship="Self.FK_Ogrenci_Ogretmen" FromRole="Ogrenci" ToRole="Ogretmen" />
+  </EntityType>
+  <EntityType Name="Ogretmen">
+    <Key>
+      <PropertyRef Name="OgretmenId" />
+    </Key>
+    <Property Name="OgretmenId" Type="Int32" Nullable="false" />
+    <Property Name="OgretmenTc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenIsim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenSoyisim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenOkul" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenMail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenTel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="OgretmenFoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Ogrenci" Relationship="Self.FK_Ogrenci_Ogretmen" FromRole="Ogretmen" ToRole="Ogrenci" />
+  </EntityType>
+  <EntityType Name="StajBelgeleri">
+    <Key>
+      <PropertyRef Name="StajRaporlariId" />
+    </Key>
+    <Property Name="StajRaporlariId" Type="Int32" Nullable="false" />
+    <Property Name="StaRaporuAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BelgeIcerik" Relationship="Self.FK_BelgeIcerik_StajBelgeleri" FromRole="StajBelgeleri" ToRole="BelgeIcerik" />
+  </EntityType>
+  <Association Name="FK_BelgeIcerik_StajBelgeleri">
+    <End Role="StajBelgeleri" Type="Self.StajBelgeleri" Multiplicity="1" />
+    <End Role="BelgeIcerik" Type="Self.BelgeIcerik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StajBelgeleri">
+        <PropertyRef Name="StajRaporlariId" />
+      </Principal>
+      <Dependent Role="BelgeIcerik">
+        <PropertyRef Name="StajBelgeAdi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BelgeIsYeri_IsYeri">
+    <End Role="IsYeri" Type="Self.IsYeri" Multiplicity="0..1" />
+    <End Role="BelgeIsYeri" Type="Self.BelgeIsYeri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IsYeri">
+        <PropertyRef Name="IsyeriId" />
+      </Principal>
+      <Dependent Role="BelgeIsYeri">
+        <PropertyRef Name="IsYeriAd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IsYeri_Ogrenci">
+    <End Role="Ogrenci" Type="Self.Ogrenci" Multiplicity="0..1" />
+    <End Role="IsYeri" Type="Self.IsYeri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenci">
+        <PropertyRef Name="OgrenciId" />
+      </Principal>
+      <Dependent Role="IsYeri">
+        <PropertyRef Name="IsyeriOgrenci" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ogrenci_Ogretmen">
+    <End Role="Ogretmen" Type="Self.Ogretmen" Multiplicity="0..1" />
+    <End Role="Ogrenci" Type="Self.Ogrenci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogretmen">
+        <PropertyRef Name="OgretmenId" />
+      </Principal>
+      <Dependent Role="Ogrenci">
+        <PropertyRef Name="OgrenciOgretmen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="stajdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BelgeIcerik" EntityType="Self.BelgeIcerik" />
+    <EntitySet Name="BelgeIsYeri" EntityType="Self.BelgeIsYeri" />
+    <EntitySet Name="IsYeri" EntityType="Self.IsYeri" />
+    <EntitySet Name="Ogrenci" EntityType="Self.Ogrenci" />
+    <EntitySet Name="Ogretmen" EntityType="Self.Ogretmen" />
+    <EntitySet Name="StajBelgeleri" EntityType="Self.StajBelgeleri" />
+    <AssociationSet Name="FK_BelgeIcerik_StajBelgeleri" Association="Self.FK_BelgeIcerik_StajBelgeleri">
+      <End Role="StajBelgeleri" EntitySet="StajBelgeleri" />
+      <End Role="BelgeIcerik" EntitySet="BelgeIcerik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BelgeIsYeri_IsYeri" Association="Self.FK_BelgeIsYeri_IsYeri">
+      <End Role="IsYeri" EntitySet="IsYeri" />
+      <End Role="BelgeIsYeri" EntitySet="BelgeIsYeri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IsYeri_Ogrenci" Association="Self.FK_IsYeri_Ogrenci">
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+      <End Role="IsYeri" EntitySet="IsYeri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ogrenci_Ogretmen" Association="Self.FK_Ogrenci_Ogretmen">
+      <End Role="Ogretmen" EntitySet="Ogretmen" />
+      <End Role="Ogrenci" EntitySet="Ogrenci" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

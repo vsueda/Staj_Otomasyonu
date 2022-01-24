@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stajdbModelStoreContainer" CdmEntityContainer="stajdbEntities">
+    <EntitySetMapping Name="BelgeIcerik">
+      <EntityTypeMapping TypeName="stajdbModel.BelgeIcerik">
+        <MappingFragment StoreEntitySet="BelgeIcerik">
+          <ScalarProperty Name="StajBelgeAdi" ColumnName="StajBelgeAdi" />
+          <ScalarProperty Name="BelgeOkulAdi" ColumnName="BelgeOkulAdi" />
+          <ScalarProperty Name="BelgeOgrenciSinif" ColumnName="BelgeOgrenciSinif" />
+          <ScalarProperty Name="BelgeOgrenciBolum" ColumnName="BelgeOgrenciBolum" />
+          <ScalarProperty Name="BelgeOgrenciStajNo" ColumnName="BelgeOgrenciStajNo" />
+          <ScalarProperty Name="BelgeOgrenciAdi" ColumnName="BelgeOgrenciAdi" />
+          <ScalarProperty Name="BelgeOgrenciNumara" ColumnName="BelgeOgrenciNumara" />
+          <ScalarProperty Name="BelgeTarih" ColumnName="BelgeTarih" />
+          <ScalarProperty Name="BelgeOgrenciAdres" ColumnName="BelgeOgrenciAdres" />
+          <ScalarProperty Name="BelgeOgrenciStajYil" ColumnName="BelgeOgrenciStajYil" />
+          <ScalarProperty Name="BelgeOgrenciOgretim" ColumnName="BelgeOgrenciOgretim" />
+          <ScalarProperty Name="BelgeId" ColumnName="BelgeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BelgeIsYeri">
+      <EntityTypeMapping TypeName="stajdbModel.BelgeIsYeri">
+        <MappingFragment StoreEntitySet="BelgeIsYeri">
+          <ScalarProperty Name="IsYeriAd" ColumnName="IsYeriAd" />
+          <ScalarProperty Name="IsYeriYetkiliAd" ColumnName="IsYeriYetkiliAd" />
+          <ScalarProperty Name="IsYeriYetkiliSoyad" ColumnName="IsYeriYetkiliSoyad" />
+          <ScalarProperty Name="IsYeriWebAdresi" ColumnName="IsYeriWebAdresi" />
+          <ScalarProperty Name="IsYeriToplamPersonelSayisi" ColumnName="IsYeriToplamPersonelSayisi" />
+          <ScalarProperty Name="IsYeriTeknikPersonelSayisi" ColumnName="IsYeriTeknikPersonelSayisi" />
+          <ScalarProperty Name="IsYeriFaaliyetAlanlari" ColumnName="IsYeriFaaliyetAlanlari" />
+          <ScalarProperty Name="IsYeriPersonelMezunOkul" ColumnName="IsYeriPersonelMezunOkul" />
+          <ScalarProperty Name="IsYeriPersonelMezunBolum" ColumnName="IsYeriPersonelMezunBolum" />
+          <ScalarProperty Name="IsYeriPersonelMezunGorev" ColumnName="IsYeriPersonelMezunGorev" />
+          <ScalarProperty Name="IsYeriCumartesi" ColumnName="IsYeriCumartesi" />
+          <ScalarProperty Name="IsYeriId" ColumnName="IsYeriId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IsYeri">
+      <EntityTypeMapping TypeName="stajdbModel.IsYeri">
+        <MappingFragment StoreEntitySet="IsYeri">
+          <ScalarProperty Name="IsyeriId" ColumnName="IsyeriId" />
+          <ScalarProperty Name="IsyeriNo" ColumnName="IsyeriNo" />
+          <ScalarProperty Name="IsyeriSifre" ColumnName="IsyeriSifre" />
+          <ScalarProperty Name="IsyeriIsim" ColumnName="IsyeriIsim" />
+          <ScalarProperty Name="IsyeriIl" ColumnName="IsyeriIl" />
+          <ScalarProperty Name="IsyeriAdres" ColumnName="IsyeriAdres" />
+          <ScalarProperty Name="IsyeriMail" ColumnName="IsyeriMail" />
+          <ScalarProperty Name="IsyeriTel" ColumnName="IsyeriTel" />
+          <ScalarProperty Name="IsyeriOgrenci" ColumnName="IsyeriOgrenci" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrenci">
+      <EntityTypeMapping TypeName="stajdbModel.Ogrenci">
+        <MappingFragment StoreEntitySet="Ogrenci">
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="OgrenciTc" ColumnName="OgrenciTc" />
+          <ScalarProperty Name="OgrenciSifre" ColumnName="OgrenciSifre" />
+          <ScalarProperty Name="OgreciIsim" ColumnName="OgreciIsim" />
+          <ScalarProperty Name="OgrenciSoyisim" ColumnName="OgrenciSoyisim" />
+          <ScalarProperty Name="OgrenciOkul" ColumnName="OgrenciOkul" />
+          <ScalarProperty Name="OgrenciOgretmen" ColumnName="OgrenciOgretmen" />
+          <ScalarProperty Name="OgrenciMail" ColumnName="OgrenciMail" />
+          <ScalarProperty Name="OgrenciTel" ColumnName="OgrenciTel" />
+          <ScalarProperty Name="OgrenciFoto" ColumnName="OgrenciFoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogretmen">
+      <EntityTypeMapping TypeName="stajdbModel.Ogretmen">
+        <MappingFragment StoreEntitySet="Ogretmen">
+          <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+          <ScalarProperty Name="OgretmenTc" ColumnName="OgretmenTc" />
+          <ScalarProperty Name="OgretmenSifre" ColumnName="OgretmenSifre" />
+          <ScalarProperty Name="OgretmenIsim" ColumnName="OgretmenIsim" />
+          <ScalarProperty Name="OgretmenSoyisim" ColumnName="OgretmenSoyisim" />
+          <ScalarProperty Name="OgretmenOkul" ColumnName="OgretmenOkul" />
+          <ScalarProperty Name="OgretmenMail" ColumnName="OgretmenMail" />
+          <ScalarProperty Name="OgretmenTel" ColumnName="OgretmenTel" />
+          <ScalarProperty Name="OgretmenFoto" ColumnName="OgretmenFoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StajBelgeleri">
+      <EntityTypeMapping TypeName="stajdbModel.StajBelgeleri">
+        <MappingFragment StoreEntitySet="StajBelgeleri">
+          <ScalarProperty Name="StajRaporlariId" ColumnName="StajRaporlariId" />
+          <ScalarProperty Name="StaRaporuAdi" ColumnName="StaRaporuAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
